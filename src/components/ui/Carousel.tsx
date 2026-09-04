@@ -16,17 +16,16 @@ interface CarouselProps {
   slides: CarouselSlide[];
   /** Milliseconds between slides; 0 disables autoplay. */
   autoplay?: number;
-  /** Aspect ratio of the stage, e.g. '16 / 9'. */
-  aspect?: string;
   label: string;
   className?: string;
 }
 
 /**
- * Full-width fade carousel: one slide at a time,
- * autoplay with pause on hover, arrows inside, dots below, keyboard arrows.
+ * Full-width fade carousel: one slide at a time, each image shown whole
+ * (no cropping) inside a stage sized to the tallest image, autoplay with
+ * pause on hover, arrows inside, dots below, keyboard arrows.
  */
-export function Carousel({ slides, autoplay = 5000, aspect = '16 / 9', label, className }: CarouselProps) {
+export function Carousel({ slides, autoplay = 5000, label, className }: CarouselProps) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const reduced = useReducedMotion();
@@ -51,6 +50,10 @@ export function Carousel({ slides, autoplay = 5000, aspect = '16 / 9', label, cl
 
   if (count === 0) return null;
 
+  // The stage takes the proportions of the tallest image (capped at 1024px tall,
+  // the height of a portrait photo at natural size), so every slide fits whole.
+  const stageRatio = Math.min(...slides.map((s) => s.image.width / s.image.height));
+
   return (
     <div className={className}>
       <div
@@ -63,14 +66,14 @@ export function Carousel({ slides, autoplay = 5000, aspect = '16 / 9', label, cl
         onMouseLeave={() => setPaused(false)}
         onFocus={() => setPaused(true)}
         onBlur={() => setPaused(false)}
-        className="relative w-full overflow-hidden rounded bg-paper outline-none focus-visible:ring-2 focus-visible:ring-brass"
-        style={{ aspectRatio: aspect }}
+        className="relative max-h-[1024px] w-full overflow-hidden bg-white outline-none focus-visible:ring-2 focus-visible:ring-brass"
+        style={{ aspectRatio: String(stageRatio) }}
       >
         {slides.map((s, i) => {
           const active = i === index;
           const body = (
             <>
-              <GalleryImage image={s.image} sizes="100vw" priority={i === 0} className="h-full w-full" />
+              <GalleryImage image={s.image} sizes="100vw" priority={i === 0} className="h-full w-full bg-white" fit="contain" />
               {s.caption && (
                 <span className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-ink/70 to-ink/0 px-5 pb-4 pt-10 font-heading text-ui text-white">
                   {s.caption}

@@ -131,14 +131,14 @@ export function Hero() {
   }, [reduced]);
 
   return (
-    <section className="relative h-[70vh] max-h-[46rem] min-h-[32rem] overflow-hidden bg-ink" aria-label={en.home.headline}>
+    <section className="relative h-[calc(100vh-4.5rem)] min-h-[32rem] overflow-hidden bg-ink" aria-label={en.home.headline}>
       {heroSlides.map((s, i) => (
         <div
           key={s.image.id}
           aria-hidden={i !== index}
           className={cn('absolute inset-0 transition-opacity duration-scene ease-soft', i === index ? 'opacity-100' : 'opacity-0')}
         >
-          <GalleryImage image={s.image} sizes="100vw" priority={i === 0} className="h-full w-full" imgClassName="object-cover" />
+          <GalleryImage image={s.image} sizes="100vw" priority={i === 0} className="h-full w-full" />
         </div>
       ))}
 

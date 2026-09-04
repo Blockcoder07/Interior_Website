@@ -11,6 +11,8 @@ interface GalleryImageProps {
   className?: string;
   imgClassName?: string;
   style?: CSSProperties;
+  /** `cover` fills the box (default); `contain` shows the whole image inside it. */
+  fit?: 'cover' | 'contain';
 }
 
 /**
@@ -18,7 +20,7 @@ interface GalleryImageProps {
  * background behind the img and a fade-in once decoded. Never a spinner —
  * Section 9.
  */
-export function GalleryImage({ image, sizes, priority = false, className, imgClassName, style }: GalleryImageProps) {
+export function GalleryImage({ image, sizes, priority = false, className, imgClassName, style, fit = 'cover' }: GalleryImageProps) {
   const [loaded, setLoaded] = useState(false);
 
   const onLoad = useCallback((e: React.SyntheticEvent<HTMLImageElement>) => {
@@ -33,11 +35,10 @@ export function GalleryImage({ image, sizes, priority = false, className, imgCla
 
   return (
     <div
-      className={cn('relative overflow-hidden bg-cover bg-center', className)}
+      className={cn('relative overflow-hidden bg-center bg-no-repeat', fit === 'contain' ? 'bg-contain' : 'bg-cover', className)}
       style={{
         ...style,
         backgroundImage: loaded ? undefined : `url(${image.lqip})`,
-        backgroundColor: loaded ? undefined : 'var(--color-paper)',
       }}
     >
       <picture>
@@ -54,7 +55,8 @@ export function GalleryImage({ image, sizes, priority = false, className, imgCla
           fetchPriority={priority ? 'high' : 'auto'}
           onLoad={onLoad}
           className={cn(
-            'block h-full w-full object-cover transition-opacity duration-base ease-soft',
+            'block h-full w-full transition-opacity duration-base ease-soft',
+            fit === 'contain' ? 'object-contain' : 'object-cover',
             loaded ? 'opacity-100' : 'opacity-0',
             imgClassName,
           )}

@@ -22,7 +22,12 @@ export function ServicesRows() {
           const media = useVideo ? (
             <video src={servicesVideo} autoPlay loop muted playsInline controlsList="nodownload" className="aspect-[16/9] w-full rounded object-cover" aria-hidden="true" />
           ) : (
-            <GalleryImage image={servicesImage} sizes="(min-width: 1024px) 50vw, 100vw" className="aspect-[2/1] w-full rounded" />
+            <GalleryImage
+              image={servicesImage}
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="w-full rounded"
+              style={{ aspectRatio: `${servicesImage.width} / ${servicesImage.height}` }}
+            />
           );
           return (
             <article key={s.category} className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">

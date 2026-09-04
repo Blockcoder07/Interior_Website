@@ -22,8 +22,8 @@ export function CategoryGalleries() {
         {t.title}
       </h2>
       <div className="flex flex-col gap-16">
-        <Gallery title={t.interiors} images={interiorSlides} />
-        <Gallery title={t.architecture} images={architectureSlides} />
+        <Gallery id="interior" title={t.interiors} images={interiorSlides} />
+        <Gallery id="architecture" title={t.architecture} images={architectureSlides} />
         <Gallery id="flats" title={t.flats} images={flatSlides} />
         <Gallery id="offices" title={t.offices} images={officeSlides} />
       </div>
