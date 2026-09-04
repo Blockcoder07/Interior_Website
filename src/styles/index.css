@@ -122,6 +122,34 @@
   .container-site {
     @apply mx-auto w-full max-w-site px-5 sm:px-8 lg:px-12;
   }
+  /* Keep content clear of the notch in landscape; identical elsewhere (insets are 0). */
+  @supports (padding: max(0px)) {
+    .container-site {
+      padding-left: max(1.25rem, env(safe-area-inset-left));
+      padding-right: max(1.25rem, env(safe-area-inset-right));
+    }
+    @media (min-width: 640px) {
+      .container-site {
+        padding-left: max(2rem, env(safe-area-inset-left));
+        padding-right: max(2rem, env(safe-area-inset-right));
+      }
+    }
+    @media (min-width: 1024px) {
+      .container-site {
+        padding-left: max(3rem, env(safe-area-inset-left));
+        padding-right: max(3rem, env(safe-area-inset-right));
+      }
+    }
+  }
+
+  /* Hero subtitle: a soft light halo so ink text stays readable over dark parts of the photo on phones and tablets. */
+  @media (max-width: 1023px) {
+    .hero-subtitle {
+      text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.95),
+        0 0 2px rgba(255, 255, 255, 0.9);
+    }
+  }
 
   .section {
     @apply py-16 lg:py-24;

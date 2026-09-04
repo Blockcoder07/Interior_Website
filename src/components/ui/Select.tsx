@@ -23,6 +23,8 @@ export function Select({ label, hideLabel = false, className, id, ...rest }: Sel
           {...rest}
           className={cn(
             'h-10 w-full appearance-none rounded border border-hairline bg-paper pl-3 pr-9',
+            // 44px tall and 16px type on phones and tablets: tappable, and no iOS focus zoom.
+            'max-md:h-11 max-md:text-[1rem]',
             'font-heading text-ui-sm text-ink',
             'focus:border-brass focus:outline-none',
             'disabled:opacity-40',

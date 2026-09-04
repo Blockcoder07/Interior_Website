@@ -20,7 +20,9 @@ export function LenisProvider({ children }: { children: ReactNode }) {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    if (reduced) {
+    // Touch screens keep native scrolling: no smoothing loop to run on a phone.
+    const touch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+    if (reduced || touch) {
       setLenis(null);
       return;
     }

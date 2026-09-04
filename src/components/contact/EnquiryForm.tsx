@@ -168,7 +168,7 @@ export function EnquiryForm() {
           <WhatsAppIcon size={22} />
           {en.actions.whatsapp}
         </Button>
-        <a href={telHref()} className="spec text-graphite hover:text-brass">
+        <a href={telHref()} className="spec inline-flex min-h-[44px] items-center text-graphite hover:text-brass">
           {t.orCall} {business.phoneDisplay}
         </a>
       </div>

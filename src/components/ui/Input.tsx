@@ -1,8 +1,9 @@
 import type { InputHTMLAttributes, TextareaHTMLAttributes } from 'react';
 import { cn } from '@/lib/cn';
 
+// 16px on phones and tablets so iOS Safari does not zoom the page when a field is focused.
 const field =
-  'w-full rounded border border-hairline bg-paper px-3 font-body text-body-sm text-ink placeholder:text-cement ' +
+  'w-full rounded border border-hairline bg-paper px-3 font-body text-body-sm max-md:text-[1rem] text-ink placeholder:text-cement ' +
   'focus:border-brass focus:outline-none aria-[invalid=true]:border-brass';
 
 interface FieldProps {

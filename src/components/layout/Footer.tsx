@@ -20,11 +20,11 @@ export function Footer() {
           <div>
             <h2 className="font-heading text-ui font-semibold">{en.contact.contact}</h2>
             <p className="mt-3 text-body">
-              <a href={telHref()} className="hover:text-brass">
+              <a href={telHref()} className="-my-2 inline-block py-2 hover:text-brass">
                 {business.phoneDisplay}
               </a>
               <br />
-              <a href={`mailto:${business.email}`} className="hover:text-brass">
+              <a href={`mailto:${business.email}`} className="-my-2 inline-block break-all py-2 hover:text-brass">
                 {business.email}
               </a>
             </p>
@@ -51,13 +51,13 @@ export function Footer() {
           <ul className="flex flex-wrap gap-x-5 gap-y-2">
             {siteLinks.map((l) => (
               <li key={l.to}>
-                <Link to={l.to} className="font-heading text-ui-sm uppercase tracking-[0.06em] text-white/80 hover:text-brass">
+                <Link to={l.to} className="-my-3 inline-block py-3 font-heading text-ui-sm uppercase tracking-[0.06em] text-white/80 hover:text-brass">
                   {l.label}
                 </Link>
               </li>
             ))}
             <li>
-              <a href={business.social.instagram.url} target="_blank" rel="noreferrer" className="font-heading text-ui-sm uppercase tracking-[0.06em] text-white/80 hover:text-brass">
+              <a href={business.social.instagram.url} target="_blank" rel="noreferrer" className="-my-3 inline-block py-3 font-heading text-ui-sm uppercase tracking-[0.06em] text-white/80 hover:text-brass">
                 Instagram
               </a>
             </li>

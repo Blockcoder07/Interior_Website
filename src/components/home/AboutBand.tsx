@@ -14,7 +14,7 @@ export function AboutBand() {
         <h2 id="about-h" className="mt-4 font-heading text-[2rem] font-medium uppercase tracking-[0.04em] text-[#927E7E] sm:text-[2.625rem]">
           {t.title}
         </h2>
-        <p className="font-heading text-[1.75rem] font-semibold text-brass sm:text-[2.25rem]">{business.legalName}</p>
+        <p className="font-heading text-[1.75rem] font-semibold text-brass [text-wrap:balance] sm:text-[2.25rem]">{business.legalName}</p>
 
         <div className="mt-8 text-body text-ink">
           <p>{business.positioning}</p>

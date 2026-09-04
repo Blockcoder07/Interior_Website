@@ -27,7 +27,7 @@ export function BackToTop() {
       onClick={toTop}
       aria-label={en.actions.backToTop}
       className={cn(
-        'fixed bottom-5 left-5 z-40 flex h-11 w-11 items-center justify-center rounded border border-hairline bg-paper/90 text-ink backdrop-blur transition-opacity duration-instant hover:border-brass hover:text-brass',
+        'fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] left-[max(1.25rem,env(safe-area-inset-left))] z-40 flex h-11 w-11 items-center justify-center rounded border border-hairline bg-paper/90 text-ink backdrop-blur transition-opacity duration-instant hover:border-brass hover:text-brass',
         show ? 'opacity-100' : 'pointer-events-none opacity-0',
       )}
     >

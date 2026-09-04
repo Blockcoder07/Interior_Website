@@ -27,6 +27,7 @@ export const en = {
     followOnInstagram: 'Follow on Instagram',
     emailUs: 'Email us',
     backToTop: 'Back to top',
+    callUs: 'Call',
     loadMore: 'Load more',
     backToProjects: 'All projects',
   },

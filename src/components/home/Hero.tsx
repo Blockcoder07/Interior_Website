@@ -131,7 +131,10 @@ export function Hero() {
   }, [reduced]);
 
   return (
-    <section className="relative h-[calc(100vh-4.5rem)] min-h-[32rem] overflow-hidden bg-ink" aria-label={en.home.headline}>
+    <section
+      className="relative h-[calc(100vh-4.5rem)] min-h-[32rem] overflow-hidden bg-ink supports-[height:100svh]:h-[calc(100svh-4.5rem)] [@media(max-height:480px)]:min-h-[22rem] [@media(max-height:480px)]:h-[calc(100svh-3.5rem)]"
+      aria-label={en.home.headline}
+    >
       {heroSlides.map((s, i) => (
         <div
           key={s.image.id}
@@ -159,15 +162,15 @@ export function Hero() {
           <h2 key={`t${i === index ? 'on' : 'off'}`} className={cn('text-[26px] leading-[30px] text-[#D8D8D8] sm:text-[40px] sm:leading-[54px]', i === index && !reduced && 'animate-rise')}>
             <span className="bg-ink px-[10px]">{s.title}</span>
           </h2>
-          <p key={`s${i === index ? 'on' : 'off'}`} className={cn('my-[15px] text-[16px] text-ink', i === index && !reduced && 'animate-rise-late')}>
+          <p key={`s${i === index ? 'on' : 'off'}`} className={cn('hero-subtitle my-[15px] text-[16px] text-ink', i === index && !reduced && 'animate-rise-late')}>
             {s.subtitle}
           </p>
           {s.buttons && (
             <div key={`b${i === index ? 'on' : 'off'}`} className={cn('mt-2 flex flex-wrap justify-center gap-[10px]', i === index && !reduced && 'animate-rise-later')}>
-              <Link to="/" className={pill}>
+              <Link to="/" className={cn(pill, 'min-h-[44px]')}>
                 {business.shortName.toUpperCase()}
               </Link>
-              <a href={`mailto:${business.email}`} className={pill}>
+              <a href={`mailto:${business.email}`} className={cn(pill, 'min-h-[44px]')}>
                 {en.actions.emailUs.toUpperCase()}
               </a>
             </div>

@@ -30,7 +30,9 @@ export const commercialSlides: readonly ImageAsset[] = folderImages('commercial'
 /** Corporate Offices: every file in assets/raw/offices (office-01.jpg, office-02.jpg …). The section hides when empty. */
 export const officeSlides: readonly ImageAsset[] = folderImages('offices', (n) => `Corporate office project ${n}`);
 
+/** 720p, 25 fps, silent, about 5 MB; the poster shows until it plays. */
 export const servicesVideo = '/video/office.mp4';
+export const servicesVideoPoster = '/video/office-poster.jpg';
 
 /** One picture per service row; a row without a picture shows the video. */
 export const servicesMedia: Readonly<Partial<Record<Category, ImageAsset>>> = {

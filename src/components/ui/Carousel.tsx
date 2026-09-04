@@ -149,8 +149,9 @@ export function Carousel({ slides, autoplay = 5000, label, className }: Carousel
       </div>
 
       {count > 1 && (
-        <div className="mt-4 flex flex-wrap justify-center gap-2" role="tablist" aria-label={label}>
+        <div className="mt-2 flex flex-wrap justify-center" role="tablist" aria-label={label}>
           {slides.map((s, i) => (
+            // 44px-tall cells so the dots are tappable; the visible dot stays 10px.
             <button
               key={s.image.id}
               type="button"
@@ -158,11 +159,15 @@ export function Carousel({ slides, autoplay = 5000, label, className }: Carousel
               aria-selected={i === index}
               aria-label={`${en.carousel.slide} ${i + 1}`}
               onClick={() => setIndex(i)}
-              className={cn(
-                'h-2.5 rounded-full transition-all duration-base',
-                i === index ? 'w-6 bg-brass' : 'w-2.5 bg-cement hover:bg-graphite',
-              )}
-            />
+              className="group flex h-11 items-center px-1"
+            >
+              <span
+                className={cn(
+                  'block h-2.5 rounded-full transition-all duration-base',
+                  i === index ? 'w-6 bg-brass' : 'w-2.5 bg-cement group-hover:bg-graphite',
+                )}
+              />
+            </button>
           ))}
         </div>
       )}

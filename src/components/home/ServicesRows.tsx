@@ -1,5 +1,5 @@
 import { GalleryImage } from '@/components/gallery/GalleryImage';
-import { servicesMedia, servicesVideo } from '@/data/media';
+import { servicesMedia, servicesVideo, servicesVideoPoster } from '@/data/media';
 import { RATE_DISCLAIMER, services } from '@/data/services';
 import { formatRate } from '@/lib/format';
 import { cn } from '@/lib/cn';
@@ -27,7 +27,18 @@ export function ServicesRows() {
               style={{ aspectRatio: `${picture.width} / ${picture.height}` }}
             />
           ) : (
-            <video src={servicesVideo} autoPlay loop muted playsInline controlsList="nodownload" className="aspect-[16/9] w-full rounded object-cover" aria-hidden="true" />
+            <video
+              src={servicesVideo}
+              poster={servicesVideoPoster}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              controlsList="nodownload"
+              className="aspect-[16/9] w-full rounded object-cover"
+              aria-hidden="true"
+            />
           );
           return (
             <article key={s.category} className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">

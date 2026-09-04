@@ -5,6 +5,8 @@ const v = (name) => `rgb(var(--c-${name}) / <alpha-value>)`;
 
 export default {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
+  // hover: styles only on devices that can hover, so touch screens never get stuck states.
+  future: { hoverOnlyWhenSupported: true },
   theme: {
     colors: {
       transparent: 'transparent',

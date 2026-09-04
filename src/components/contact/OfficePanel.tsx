@@ -47,17 +47,17 @@ export function OfficePanel() {
         </h2>
         <Block title={t.address}>
           <address className="not-italic">{fullAddress()}</address>
-          <a href={directionsHref()} target="_blank" rel="noreferrer" className="mt-1 inline-block text-ui-sm uppercase tracking-[0.06em] text-brass underline underline-offset-4">
+          <a href={directionsHref()} target="_blank" rel="noreferrer" className="-mb-2 mt-1 inline-block py-2 text-ui-sm uppercase tracking-[0.06em] text-brass underline underline-offset-4">
             {en.actions.getDirections}
           </a>
         </Block>
         <Block title={t.contact}>
-          <a href={telHref()} className="hover:text-brass">
+          <a href={telHref()} className="-my-2 inline-block py-2 hover:text-brass">
             {business.phoneDisplay}
           </a>
         </Block>
         <Block title={t.email}>
-          <a href={`mailto:${business.email}`} className="hover:text-brass">
+          <a href={`mailto:${business.email}`} className="-my-2 inline-block break-all py-2 hover:text-brass">
             {business.email}
           </a>
         </Block>
@@ -72,7 +72,7 @@ export function OfficePanel() {
         <Block title={t.social}>
           <ul className="mt-2 flex gap-3" aria-label={t.social}>
             <li>
-              <a href={business.social.instagram.url} target="_blank" rel="noreferrer" aria-label="Instagram" className="flex h-10 w-10 items-center justify-center rounded bg-red text-white hover:bg-red-hover">
+              <a href={business.social.instagram.url} target="_blank" rel="noreferrer" aria-label="Instagram" className="flex h-10 w-10 items-center justify-center rounded bg-red text-white hover:bg-red-hover max-md:h-11 max-md:w-11">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
                   <rect x="3" y="3" width="18" height="18" rx="4" />
                   <circle cx="12" cy="12" r="4" />
@@ -82,7 +82,7 @@ export function OfficePanel() {
             </li>
             {business.social.facebook && (
               <li>
-                <a href={business.social.facebook} target="_blank" rel="noreferrer" aria-label="Facebook" className="flex h-10 w-10 items-center justify-center rounded bg-red text-white hover:bg-red-hover">
+                <a href={business.social.facebook} target="_blank" rel="noreferrer" aria-label="Facebook" className="flex h-10 w-10 items-center justify-center rounded bg-red text-white hover:bg-red-hover max-md:h-11 max-md:w-11">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.6 1.6-1.6h1.7V4.4c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.2v2.3H7.4V14h2.8v8h3.3Z" />
                   </svg>
@@ -91,7 +91,7 @@ export function OfficePanel() {
             )}
             {business.social.linkedin && (
               <li>
-                <a href={business.social.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="flex h-10 w-10 items-center justify-center rounded bg-red text-white hover:bg-red-hover">
+                <a href={business.social.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="flex h-10 w-10 items-center justify-center rounded bg-red text-white hover:bg-red-hover max-md:h-11 max-md:w-11">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M6.9 8.5H3.6V21h3.3V8.5ZM5.3 3a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8ZM21 13.4c0-3.4-1.8-5.2-4.5-5.2-2 0-3 1.1-3.5 1.9V8.5H9.7V21H13v-6.6c0-1.7.3-3.3 2.4-3.3 2 0 2.1 1.9 2.1 3.4V21H21v-7.6Z" />
                   </svg>
@@ -99,7 +99,7 @@ export function OfficePanel() {
               </li>
             )}
             <li>
-              <a href={`https://wa.me/${business.phone.replace(/^\+/, '')}`} target="_blank" rel="noreferrer" aria-label="WhatsApp" className="flex h-10 w-10 items-center justify-center rounded bg-white">
+              <a href={`https://wa.me/${business.phone.replace(/^\+/, '')}`} target="_blank" rel="noreferrer" aria-label="WhatsApp" className="flex h-10 w-10 items-center justify-center rounded bg-white max-md:h-11 max-md:w-11">
                 <WhatsAppIcon size={28} />
               </a>
             </li>
