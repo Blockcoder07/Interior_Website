@@ -22,8 +22,8 @@ export const business = {
   citiesServed: ['Vadodara', 'Ahmedabad', 'Anand'],
   social: {
     instagram: {
-      handle: '@unity_quickkraft_design_studio',
-      url: 'https://www.instagram.com/unity_quickkraft_design_studio/',
+      handle: '@unity_quickkraft_pvt_ltd',
+      url: 'https://www.instagram.com/unity_quickkraft_pvt_ltd/',
     },
     // TODO: confirm with client — set to the page URLs or leave null to hide.
     facebook: null as string | null,
