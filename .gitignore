@@ -1,0 +1,15 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+
+# Raw photography is never committed — Section 9.
+assets/raw/
+
+# Build-time generated
+dist/stats.html
+/.vs
+
+# 126 MB as served by the source site; over GitHub's 100 MB limit. Re-encode and commit a small version.
+public/video/office.mp4
