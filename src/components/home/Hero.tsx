@@ -138,7 +138,9 @@ export function Hero() {
           aria-hidden={i !== index}
           className={cn('absolute inset-0 transition-opacity duration-scene ease-soft', i === index ? 'opacity-100' : 'opacity-0')}
         >
-          <GalleryImage image={s.image} sizes="100vw" priority={i === 0} className="h-full w-full" />
+          <div key={i === index ? 'on' : 'off'} className={cn('h-full w-full', i === index && !reduced && 'animate-slide-zoom')}>
+            <GalleryImage image={s.image} sizes="100vw" priority={i === 0} className="h-full w-full" />
+          </div>
         </div>
       ))}
 
@@ -154,12 +156,14 @@ export function Hero() {
           aria-hidden={i !== index}
           className={cn('absolute left-0 top-1/2 w-full -translate-y-1/2 px-[10%] text-center transition-opacity duration-slow', i === index ? 'opacity-100' : 'pointer-events-none opacity-0')}
         >
-          <h2 className="text-[26px] leading-[30px] text-[#D8D8D8] sm:text-[40px] sm:leading-[54px]">
+          <h2 key={`t${i === index ? 'on' : 'off'}`} className={cn('text-[26px] leading-[30px] text-[#D8D8D8] sm:text-[40px] sm:leading-[54px]', i === index && !reduced && 'animate-rise')}>
             <span className="bg-ink px-[10px]">{s.title}</span>
           </h2>
-          <p className="my-[15px] text-[16px] text-ink">{s.subtitle}</p>
+          <p key={`s${i === index ? 'on' : 'off'}`} className={cn('my-[15px] text-[16px] text-ink', i === index && !reduced && 'animate-rise-late')}>
+            {s.subtitle}
+          </p>
           {s.buttons && (
-            <div className="mt-2 flex flex-wrap justify-center gap-[10px]">
+            <div key={`b${i === index ? 'on' : 'off'}`} className={cn('mt-2 flex flex-wrap justify-center gap-[10px]', i === index && !reduced && 'animate-rise-later')}>
               <Link to="/" className={pill}>
                 {business.shortName.toUpperCase()}
               </Link>
