@@ -10,6 +10,8 @@ function minutesOf(hhmm: string): number {
 }
 
 function isOpenNow(now: Date): boolean {
+  const openDays: readonly number[] = business.hours.openDays;
+  if (!openDays.includes(now.getDay())) return false;
   const mins = now.getHours() * 60 + now.getMinutes();
   return mins >= minutesOf(business.hours.opens) && mins < minutesOf(business.hours.closes);
 }

@@ -5,6 +5,8 @@ import { business, streetAddress } from '@/data/business';
  * JSON-LD LocalBusiness — Section 12. Generated from `business.ts`,
  * never hand-written twice. Rendered once from the root layout.
  */
+const DAY_NAMES = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'] as const;
+
 function buildLocalBusiness(): Record<string, unknown> {
   const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
@@ -22,6 +24,7 @@ function buildLocalBusiness(): Record<string, unknown> {
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
+        dayOfWeek: business.hours.openDays.map((d) => DAY_NAMES[d]).filter(Boolean),
         opens: business.hours.opens,
         closes: business.hours.closes,
       },

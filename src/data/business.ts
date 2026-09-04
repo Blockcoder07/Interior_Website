@@ -16,7 +16,8 @@ export const business = {
     postalCode: '390018',
     country: 'IN',
   },
-  hours: { opens: '09:00', closes: '19:30', days: 'Monday – Saturday' }, // TODO: confirm days and Sunday hours
+  // openDays uses Date.getDay(): 0 = Sunday … 6 = Saturday. Closed on Sunday.
+  hours: { opens: '09:00', closes: '19:30', days: 'Monday – Saturday', openDays: [1, 2, 3, 4, 5, 6] }, // TODO: confirm days and Sunday hours
   foundedYear: 2016, // TODO: confirm with client
   email: 'unityquickkraft@gmail.com',
   citiesServed: ['Vadodara', 'Ahmedabad', 'Anand'],

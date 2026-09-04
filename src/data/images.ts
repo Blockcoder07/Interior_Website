@@ -11,7 +11,11 @@ export function img(folder: string, name: string, alt: string): ImageAsset {
   return { ...found, alt };
 }
 
-/** Every processed image in a folder, in filename order, with a generated alt. */
-export function folderImages(folder: string, alt: (n: number) => string): ImageAsset[] {
-  return (generatedImages[folder] ?? []).map((a, i) => ({ ...a, alt: alt(i + 1) }));
+/**
+ * Every processed image in a folder, in filename order. `alt` receives the
+ * 1-based position and the file name (without folder), so a lookup table of
+ * written descriptions can be used with a generic fallback.
+ */
+export function folderImages(folder: string, alt: (n: number, name: string) => string): ImageAsset[] {
+  return (generatedImages[folder] ?? []).map((a, i) => ({ ...a, alt: alt(i + 1, a.id.slice(folder.length + 1)) }));
 }
