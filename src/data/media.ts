@@ -24,6 +24,9 @@ export const architectureSlides: readonly ImageAsset[] = Array.from({ length: 3 
 /** Flat Projects: every file in assets/raw/flats (flat-01.jpg, flat-02.jpg …). The section hides when empty. */
 export const flatSlides: readonly ImageAsset[] = folderImages('flats', (n) => `Flat project ${n}, building elevation`);
 
+/** Commercial Projects: shops, showrooms and salons in assets/raw/commercial. The section hides when empty. */
+export const commercialSlides: readonly ImageAsset[] = folderImages('commercial', (n) => `Commercial project ${n}`);
+
 /** Corporate Offices: every file in assets/raw/offices (office-01.jpg, office-02.jpg …). The section hides when empty. */
 export const officeSlides: readonly ImageAsset[] = folderImages('offices', (n) => `Corporate office project ${n}`);
 

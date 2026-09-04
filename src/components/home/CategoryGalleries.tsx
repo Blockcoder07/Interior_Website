@@ -1,5 +1,5 @@
 import { Carousel } from '@/components/ui/Carousel';
-import { architectureSlides, flatSlides, interiorSlides, officeSlides } from '@/data/media';
+import { architectureSlides, commercialSlides, flatSlides, interiorSlides, officeSlides } from '@/data/media';
 import type { ImageAsset } from '@/types/project';
 import { en } from '@/i18n/en';
 
@@ -13,7 +13,7 @@ function Gallery({ id, title, images }: { id?: string; title: string; images: re
   );
 }
 
-/** Interior, Architecture, Flat and Corporate Office projects as fade carousels. */
+/** Interior, Architecture, Flat, Commercial and Corporate Office projects as fade carousels. */
 export function CategoryGalleries() {
   const t = en.home.galleries;
   return (
@@ -25,6 +25,7 @@ export function CategoryGalleries() {
         <Gallery id="interior" title={t.interiors} images={interiorSlides} />
         <Gallery id="architecture" title={t.architecture} images={architectureSlides} />
         <Gallery id="flats" title={t.flats} images={flatSlides} />
+        <Gallery id="commercial" title={t.commercial} images={commercialSlides} />
         <Gallery id="offices" title={t.offices} images={officeSlides} />
       </div>
     </section>

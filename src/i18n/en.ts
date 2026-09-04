@@ -91,6 +91,7 @@ export const en = {
       interiors: 'Interior Projects',
       architecture: 'Architecture Projects',
       flats: 'Flat Projects',
+      commercial: 'Commercial Projects',
       offices: 'Corporate Offices',
       seeAll: 'See all projects',
     },
