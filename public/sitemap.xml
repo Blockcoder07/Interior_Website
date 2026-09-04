@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.unityquickkraft.com/</loc>
+    <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.unityquickkraft.com/og-image.jpg</image:loc>
+      <image:title>Unity Quickkraft Pvt Ltd, architects and interior designers in Vadodara</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.unityquickkraft.com/img/hero/hero-01-full.jpg</image:loc>
+      <image:title>Executive cabin interior by Unity Quickkraft, Vadodara</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.unityquickkraft.com/img/interior/interior-26-full.jpg</image:loc>
+      <image:title>Bedroom interior design, Vadodara</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.unityquickkraft.com/img/flats/flat-01-full.jpg</image:loc>
+      <image:title>Villa elevation design, Vadodara</image:title>
+    </image:image>
+  </url>
+</urlset>

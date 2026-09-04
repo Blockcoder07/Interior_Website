@@ -159,9 +159,17 @@ export function Hero() {
           aria-hidden={i !== index}
           className={cn('absolute left-0 top-1/2 w-full -translate-y-1/2 px-[10%] text-center transition-opacity duration-slow', i === index ? 'opacity-100' : 'pointer-events-none opacity-0')}
         >
-          <h2 key={`t${i === index ? 'on' : 'off'}`} className={cn('text-[26px] leading-[30px] text-[#D8D8D8] sm:text-[40px] sm:leading-[54px]', i === index && !reduced && 'animate-rise')}>
-            <span className="bg-ink px-[10px]">{s.title}</span>
-          </h2>
+          {/* The first slide's title is the page's single H1; later slides repeat it as H2. */}
+          {i === 0 ? (
+            <h1 key={`t${i === index ? 'on' : 'off'}`} className={cn('text-[26px] font-normal leading-[30px] text-[#D8D8D8] sm:text-[40px] sm:leading-[54px]', i === index && !reduced && 'animate-rise')}>
+              <span className="bg-ink px-[10px]">{s.title}</span>
+              <span className="sr-only"> — {en.home.h1Suffix}</span>
+            </h1>
+          ) : (
+            <h2 key={`t${i === index ? 'on' : 'off'}`} className={cn('text-[26px] font-normal leading-[30px] text-[#D8D8D8] sm:text-[40px] sm:leading-[54px]', i === index && !reduced && 'animate-rise')}>
+              <span className="bg-ink px-[10px]">{s.title}</span>
+            </h2>
+          )}
           <p key={`s${i === index ? 'on' : 'off'}`} className={cn('hero-subtitle my-[15px] text-[16px] text-ink', i === index && !reduced && 'animate-rise-late')}>
             {s.subtitle}
           </p>

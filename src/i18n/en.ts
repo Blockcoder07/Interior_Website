@@ -44,11 +44,11 @@ export const en = {
   },
   home: {
     headline: 'Drawings, and the buildings that come after them.',
-    sub: 'Architectural planning, elevation and turnkey interiors across Vadodara, Ahmedabad and Anand.',
+    sub: 'Unity Quickkraft Pvt Ltd: architects and interior designers in Vadodara, Gujarat. Flat planning, building elevation, turnkey interiors, corporate offices and construction across Vadodara, Ahmedabad and Anand. Call +91 90043 90078.',
     heroCaption: 'Interactive elevation · drag to orbit',
     heroRoom: 'Five-storey residential block',
     heroAlt: 'Model of a five-storey residential building with teak cladding, projecting balconies and lit windows',
-    metaTitle: 'Architectural planning and turnkey interiors, Vadodara',
+    metaTitle: 'Architects & Interior Designers in Vadodara | Unity Quickkraft Pvt Ltd',
     selectedWork: 'Selected work',
     whatWeDo: 'What we do',
     numbers: 'In numbers',
@@ -65,6 +65,8 @@ export const en = {
     opensInstagram: 'opens Instagram',
     reel: 'Reel',
     tagline: 'Transforming spaces to perfection',
+    /** Read by search engines and screen readers after the brand name in the H1. */
+    h1Suffix: 'architects and interior designers in Vadodara',
     slides: [
       { title: 'Unity Quickkraft', subtitle: 'Architects & interiors', buttons: false },
       { title: 'UNITY QUICKKRAFT', subtitle: 'One Stop Solution.', buttons: true },

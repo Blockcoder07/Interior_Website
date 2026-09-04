@@ -1,7 +1,9 @@
 import { Button } from '@/components/ui/Button';
+import { useDocumentMeta } from '@/hooks/useDocumentMeta';
 import { en } from '@/i18n/en';
 
 export function NotFoundPage() {
+  useDocumentMeta({ title: en.pages.notFound, description: en.pages.notFoundBody, path: '/404', noindex: true });
   return (
     <section className="container-site section">
       <p className="spec">404</p>
