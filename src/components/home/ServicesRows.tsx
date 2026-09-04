@@ -1,13 +1,13 @@
 import { GalleryImage } from '@/components/gallery/GalleryImage';
-import { servicesImage, servicesVideo } from '@/data/media';
+import { servicesMedia, servicesVideo } from '@/data/media';
 import { RATE_DISCLAIMER, services } from '@/data/services';
 import { formatRate } from '@/lib/format';
 import { cn } from '@/lib/cn';
 import { en } from '@/i18n/en';
 
 /**
- * "Our Services": a muted looping video beside "01 …", the office image
- * beside "02 …", and the pattern repeats for the remaining services.
+ * "Our Services": each row pairs a service with its picture (or the muted
+ * looping video when it has none), alternating picture-left / text-left.
  */
 export function ServicesRows() {
   return (
@@ -18,16 +18,16 @@ export function ServicesRows() {
       <div className="flex flex-col gap-14 lg:gap-20">
         {services.map((s, i) => {
           const textLeft = i % 2 === 1;
-          const useVideo = i % 2 === 0;
-          const media = useVideo ? (
-            <video src={servicesVideo} autoPlay loop muted playsInline controlsList="nodownload" className="aspect-[16/9] w-full rounded object-cover" aria-hidden="true" />
-          ) : (
+          const picture = servicesMedia[s.category];
+          const media = picture ? (
             <GalleryImage
-              image={servicesImage}
+              image={picture}
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="w-full rounded"
-              style={{ aspectRatio: `${servicesImage.width} / ${servicesImage.height}` }}
+              style={{ aspectRatio: `${picture.width} / ${picture.height}` }}
             />
+          ) : (
+            <video src={servicesVideo} autoPlay loop muted playsInline controlsList="nodownload" className="aspect-[16/9] w-full rounded object-cover" aria-hidden="true" />
           );
           return (
             <article key={s.category} className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">

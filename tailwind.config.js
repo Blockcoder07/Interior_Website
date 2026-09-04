@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-// Palette values live in src/styles/index.css as CSS variables (theme "KD").
+// Palette values live in src/styles/index.css as CSS variables.
 const v = (name) => `rgb(var(--c-${name}) / <alpha-value>)`;
 
 export default {

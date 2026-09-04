@@ -10,6 +10,10 @@ export default defineConfig(({ mode }) => {
   }
   return {
     plugins,
+    server: {
+      // Visual Studio keeps its index files locked; watching them crashes the dev server.
+      watch: { ignored: ['**/.vs/**'] },
+    },
     resolve: {
       alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
     },
